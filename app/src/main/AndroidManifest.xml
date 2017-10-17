@@ -19,6 +19,42 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".News"
+            android:label="@string/title_activity_news"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Table"
+            android:label="@string/title_activity_table"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Timetable"
+            android:label="@string/title_activity_timetable"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Team"
+            android:label="@string/title_activity_team"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Club"
+            android:label="@string/title_activity_club"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Gallery"
+            android:label="@string/title_activity_gallery"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Shop"
+            android:label="@string/title_activity_shop"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Tickets"
+            android:label="@string/title_activity_tickets"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Chants"
+            android:label="@string/title_activity_chants"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

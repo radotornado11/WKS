@@ -1,6 +1,5 @@
 package rado.wks;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,15 +12,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
+public class Tickets extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tickets);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -82,30 +80,14 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        switch (id){
+        if (id == R.id.nav_news) {
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
 
-            case R.id.nav_news:
-                Intent h= new Intent(this,News.class);
-                startActivity(h);
-                break;
-            case R.id.nav_table:
-                Intent i= new Intent(this,Table.class);
-                startActivity(i);
-                break;
-            case R.id.nav_timetable:
-                Intent g= new Intent(this,Timetable.class);
-                startActivity(g);
-                break;
-            case R.id.nav_team:
-                Intent s= new Intent(this,Team.class);
-                startActivity(s);
-            case R.id.nav_club:
-                Intent t= new Intent(this,Club.class);
-                startActivity(t);
-                break;
-            // this is done, now let us go and intialise the home page.
-            // after this lets start copying the above.
-            // FOLLOW MEEEEE>>>
+        } else if (id == R.id.nav_chants) {
+
+        } else if (id == R.id.nav_shop) {
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

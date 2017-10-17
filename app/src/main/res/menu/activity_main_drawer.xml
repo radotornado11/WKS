@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_news"
             android:icon="@drawable/ic_menu_camera"
             android:title="Aktualności" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_table"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Tabela" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_timetable"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Terminarz" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_team"
             android:icon="@drawable/ic_menu_manage"
             android:title="Zawodnicy" />
+        <item
+            android:id="@+id/nav_club"
+            android:title="Klub" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="Galeria" />
+        <item
+            android:id="@+id/nav_shop"
+            android:title="Sklep" />
+        <item
+            android:id="@+id/nav_tickets"
+            android:title="Bilety" />
+        <item
+            android:id="@+id/nav_chants"
+            android:title="Przyśpiewki" />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
 
 </menu>
