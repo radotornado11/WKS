@@ -102,6 +102,21 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_club:
                 Intent t= new Intent(this,Club.class);
                 startActivity(t);
+            case R.id.nav_shop:
+                Intent sh = new Intent(this, Shop.class);
+                startActivity(sh);
+                break;
+            case R.id.nav_tickets:
+                Intent ti = new Intent(this, Tickets.class);
+                startActivity(ti);
+                break;
+            case R.id.nav_gallery:
+                Intent gal = new Intent(this, Gallery.class);
+                startActivity(gal);
+                break;
+            case R.id.nav_chants:
+                Intent chants = new Intent(this, Chants.class);
+                startActivity(chants);
                 break;
             // this is done, now let us go and intialise the home page.
             // after this lets start copying the above.

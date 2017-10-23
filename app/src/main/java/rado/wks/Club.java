@@ -1,5 +1,6 @@
 package rado.wks;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -80,14 +81,42 @@ public class Club extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_news) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        switch (id) {
 
-        } else if (id == R.id.nav_chants) {
-
-        } else if (id == R.id.nav_shop) {
-
+            case R.id.nav_news:
+                Intent h = new Intent(this, News.class);
+                startActivity(h);
+                break;
+            case R.id.nav_table:
+                Intent i = new Intent(this, Table.class);
+                startActivity(i);
+                break;
+            case R.id.nav_timetable:
+                Intent g = new Intent(this, Timetable.class);
+                startActivity(g);
+                break;
+            case R.id.nav_team:
+                Intent s = new Intent(this, Team.class);
+                startActivity(s);
+            case R.id.nav_club:
+                Intent t = new Intent(this, Club.class);
+                startActivity(t);
+            case R.id.nav_shop:
+                Intent sh = new Intent(this, Shop.class);
+                startActivity(sh);
+                break;
+            case R.id.nav_tickets:
+                Intent ti = new Intent(this, Tickets.class);
+                startActivity(ti);
+                break;
+            case R.id.nav_gallery:
+                Intent gal = new Intent(this, Gallery.class);
+                startActivity(gal);
+                break;
+            case R.id.nav_chants:
+                Intent chants = new Intent(this, Chants.class);
+                startActivity(chants);
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
