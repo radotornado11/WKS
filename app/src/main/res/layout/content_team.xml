@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="rado.wks.Team"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_team">
 
     <TextView
         android:id="@+id/textView9"

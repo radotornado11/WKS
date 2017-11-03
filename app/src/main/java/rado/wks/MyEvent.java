@@ -14,24 +14,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Shop extends AppCompatActivity
+public class MyEvent extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop);
+        setContentView(R.layout.activity_myevent);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -41,6 +32,7 @@ public class Shop extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getMenu().getItem(7).setChecked(true);
     }
 
     @Override
@@ -82,7 +74,10 @@ public class Shop extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id) {
-
+            case R.id.nav_main:
+                Intent main= new Intent(this,MainActivity.class);
+                startActivity(main);
+                break;
             case R.id.nav_news:
                 Intent h = new Intent(this, News.class);
                 startActivity(h);
@@ -98,16 +93,12 @@ public class Shop extends AppCompatActivity
             case R.id.nav_team:
                 Intent s = new Intent(this, Team.class);
                 startActivity(s);
+                break;
             case R.id.nav_club:
                 Intent t = new Intent(this, Club.class);
                 startActivity(t);
-            case R.id.nav_shop:
-                Intent sh = new Intent(this, Shop.class);
-                startActivity(sh);
                 break;
-            case R.id.nav_tickets:
-                Intent ti = new Intent(this, Tickets.class);
-                startActivity(ti);
+            case R.id.nav_shop:
                 break;
             case R.id.nav_gallery:
                 Intent gal = new Intent(this, Gallery.class);

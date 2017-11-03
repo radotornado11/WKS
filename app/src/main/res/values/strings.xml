@@ -5,13 +5,14 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="title_activity_news">News</string>
-    <string name="title_activity_table">Table</string>
-    <string name="title_activity_timetable">Timetable</string>
-    <string name="title_activity_team">Team</string>
-    <string name="title_activity_club">Club</string>
-    <string name="title_activity_gallery">Gallery</string>
-    <string name="title_activity_shop">Shop</string>
+    <string name="title_activity_news">Aktualności</string>
+    <string name="title_activity_table">Tabela</string>
+    <string name="title_activity_timetable">Terminarz</string>
+    <string name="title_activity_team">Drużyna</string>
+    <string name="title_activity_club">Klub</string>
+    <string name="title_activity_gallery">Galeria</string>
+    <string name="title_activity_shop">Moje wydarzenia</string>
     <string name="title_activity_tickets">Tickets</string>
-    <string name="title_activity_chants">Chants</string>
+    <string name="title_activity_chants">Przyśpiewki</string>
+    <string name="title_activity_home">HomeActivity</string>
 </resources>

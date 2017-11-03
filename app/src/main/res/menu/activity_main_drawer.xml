@@ -4,6 +4,9 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_main"
+            android:title="Strona główna" />
+        <item
             android:id="@+id/nav_news"
             android:icon="@drawable/ic_menu_camera"
             android:title="Aktualności" />
@@ -27,10 +30,7 @@
             android:title="Galeria" />
         <item
             android:id="@+id/nav_shop"
-            android:title="Sklep" />
-        <item
-            android:id="@+id/nav_tickets"
-            android:title="Bilety" />
+            android:title="Moje wydarzenia" />
         <item
             android:id="@+id/nav_chants"
             android:title="Przyśpiewki" />
