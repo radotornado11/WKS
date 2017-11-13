@@ -1,6 +1,8 @@
 package rado.wks;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,9 +12,37 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import rado.dao.TableDAO;
 
 public class Table extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ListView listView;
+    TableListViewAdapter adapter;
+    TableDAO tableDAO;
+    public static String RANK = "L.p.";
+    public static String IMG_URL = "Zdjęcie";
+    public static String TEAM = "Drużyna";
+    public static String MATCHES = "Mecze";
+    public static String POINTS = "Punkty";
+    public static String WINS = "Zwycięstwa";
+    public static String DRAWS = "Remisy";
+    public static String LOSES = "Porażki";
+    public static String GOALS = "Bramki";
+
+    String url = "http://legia.com/rozgrywki/ranking/lotto-ekstraklasa-295";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +60,15 @@ public class Table extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().getItem(2).setChecked(true);
+
+        tableDAO = new TableDAO(this);
+
+        listView = (ListView) findViewById(R.id.listView);
+        adapter = new TableListViewAdapter(Table.this, tableDAO.getAllTableList());
+        listView.setAdapter(adapter);
+        //progressDialog.dismiss();
+
+        //new TableRetriever().execute();
     }
 
     @Override

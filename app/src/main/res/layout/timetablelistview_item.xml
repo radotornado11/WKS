@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/leagueStats"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="LP"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="DRUŻYNA"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/homeTeamTextView"
+            android:layout_width="7dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="M"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/awayTeamTextView"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:text="P"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/homeResultTextView"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="W"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/awayResultTextView"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="R"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>

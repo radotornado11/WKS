@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="rado.wks.Timetable"
-    tools:showIn="@layout/app_bar_timetable">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
     <LinearLayout
         android:id="@+id/leagueStats"
@@ -14,6 +9,7 @@
         android:layout_height="30dp">
 
         <TextView
+            android:id="@+id/rankText"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -22,17 +18,17 @@
             android:gravity="center"/>
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/teamText"
             android:layout_width="160dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:gravity="center"
             android:text="DRUŻYNA"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/textView16"
-            android:layout_width="5dp"
+            android:id="@+id/matchesText"
+            android:layout_width="7dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:gravity="center"
@@ -40,7 +36,7 @@
             android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/pointsText"
             android:layout_width="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="4"
@@ -49,7 +45,7 @@
             android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/winsText"
             android:layout_width="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"
@@ -58,7 +54,7 @@
             android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/drawsText"
             android:layout_width="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="6"
@@ -67,7 +63,7 @@
             android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/losesText"
             android:layout_width="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="7"
@@ -76,7 +72,7 @@
             android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/rateText"
             android:layout_width="2dp"
             android:layout_height="wrap_content"
             android:layout_weight="8"
@@ -84,12 +80,4 @@
             android:text="B"
             android:textSize="16sp"/>
     </LinearLayout>
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/leagueStats">
-
-    </ListView>
 </RelativeLayout>
