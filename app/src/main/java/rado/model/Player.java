@@ -1,29 +1,74 @@
 package rado.model;
 
 /**
- * Created by Rado on 13.11.2017.
+ * Created by Rado on 14.11.2017.
  */
 
 public class Player {
-    private String position;
-    private String clubName;
-    private String pointsCount;
-    private String matchesCount;
-    private String winsCount;
-    private String drawsCount;
-    private String losesCount;
-    private String goalsBalance;
+    String name;
+    String surname;
+    String number;
+    String date;
+    String height;
+    String weight;
+    String position;
+    String marketValue;
+    String endOfContractDate;
+    String nationality;
+    String previousClub;
 
-    public Player(String p, String cl, String point, String match, String win, String draw, String los, String goal)
-    {
-        this.position = p;
-        this.clubName = cl;
-        this.pointsCount = point;
-        this.matchesCount = match;
-        this.winsCount = win;
-        this.drawsCount = draw;
-        this.losesCount = los;
-        this.goalsBalance = goal;
+    public Player(String name, String surname, String num, String date, String height, String weight, String position, String marketValue, String endOfContractDate, String nationality, String previousClub) {
+        this.name = name;
+        this.surname = surname;
+        this.number = num;
+        this.date = date;
+        this.height = height;
+        this.weight = weight;
+        this.position = position;
+        this.marketValue = marketValue;
+        this.endOfContractDate = endOfContractDate;
+        this.nationality = nationality;
+        this.previousClub = previousClub;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 
     public String getPosition() {
@@ -34,59 +79,43 @@ public class Player {
         this.position = position;
     }
 
-    public String getClubName() {
-        return clubName;
+    public String getMarketValue() {
+        return marketValue;
     }
 
-    public void setClubName(String clubName) {
-        this.clubName = clubName;
+    public void setMarketValue(String marketValue) {
+        this.marketValue = marketValue;
     }
 
-    public String getPointsCount() {
-        return pointsCount;
+    public String getEndOfContractDate() {
+        return endOfContractDate;
     }
 
-    public void setPointsCount(String pointsCount) {
-        this.pointsCount = pointsCount;
+    public void setEndOfContractDate(String endOfContractDate) {
+        this.endOfContractDate = endOfContractDate;
     }
 
-    public String getMatchesCount() {
-        return matchesCount;
+    public String getNationality() {
+        return nationality;
     }
 
-    public void setMatchesCount(String matchesCount) {
-        this.matchesCount = matchesCount;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
-    public String getWinsCount() {
-        return winsCount;
+    public String getPreviousClub() {
+        return previousClub;
     }
 
-    public void setWinsCount(String winsCount) {
-        this.winsCount = winsCount;
+    public void setPreviousClub(String previousClub) {
+        this.previousClub = previousClub;
     }
 
-    public String getDrawsCount() {
-        return drawsCount;
+    public String getNumber() {
+        return number;
     }
 
-    public void setDrawsCount(String drawsCount) {
-        this.drawsCount = drawsCount;
-    }
-
-    public String getLosesCount() {
-        return losesCount;
-    }
-
-    public void setLosesCount(String losesCount) {
-        this.losesCount = losesCount;
-    }
-
-    public String getGoalsBalance() {
-        return goalsBalance;
-    }
-
-    public void setGoalsBalance(String goalsBalance) {
-        this.goalsBalance = goalsBalance;
+    public void setNumber(String number) {
+        this.number = number;
     }
 }

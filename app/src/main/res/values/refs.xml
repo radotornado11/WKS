@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="star_on">@android:drawable/star_big_on</drawable>
+</resources>

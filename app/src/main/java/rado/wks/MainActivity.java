@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.jsoup.Jsoup;
@@ -21,6 +23,12 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    LinearLayout newsLayout;
+    LinearLayout timetableLayout;
+    LinearLayout tableLayout;
+    LinearLayout galleryLayout;
+    LinearLayout eventsLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +47,48 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().getItem(0).setChecked(true);
+
+        newsLayout = (LinearLayout)findViewById(R.id.newsLayout);
+        timetableLayout = (LinearLayout)findViewById(R.id.timetableLayout);
+        tableLayout = (LinearLayout)findViewById(R.id.tableLayout);
+        galleryLayout = (LinearLayout)findViewById(R.id.galleryLayout);
+        eventsLayout = (LinearLayout)findViewById(R.id.eventsLayout);
+
+        newsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent h= new Intent(v.getContext(), News.class);
+                startActivity(h);
+            }
+        });
+        timetableLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent h= new Intent(v.getContext(), Timetable.class);
+                startActivity(h);
+            }
+        });
+        tableLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent h= new Intent(v.getContext(), Table.class);
+                startActivity(h);
+            }
+        });
+        galleryLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent h= new Intent(v.getContext(), Gallery.class);
+                startActivity(h);
+            }
+        });
+        eventsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent h= new Intent(v.getContext(), MyEvent.class);
+                startActivity(h);
+            }
+        });
     }
 
     @Override
