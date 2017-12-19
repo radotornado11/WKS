@@ -30,6 +30,15 @@ public class TableDAO {
     private String[] allColumns = {dbHelper.COLUMN_TABLE_ID, dbHelper.COLUMN_TABLE_POSITION, dbHelper.COLUMN_CLUB_ID_FK,
         dbHelper.COLUMN_POINTS_NUMBER, dbHelper.COLUMN_MATCHES_NUMBER, dbHelper.COLUMN_WINS_NUMBER,
         dbHelper.COLUMN_DRAWS_NUMBER, dbHelper.COLUMN_LOSES_NUMBER, dbHelper.COLUMN_GOALS_BALANCE};
+    public static String RANK = "L.p.";
+    public static String IMG_URL = "Zdjęcie";
+    public static String TEAM = "Drużyna";
+    public static String MATCHES = "Mecze";
+    public static String POINTS = "Punkty";
+    public static String WINS = "Zwycięstwa";
+    public static String DRAWS = "Remisy";
+    public static String LOSES = "Porażki";
+    public static String GOALS = "Bramki";
 
     public TableDAO(Context context)
     {
@@ -63,7 +72,9 @@ public class TableDAO {
         }
         else
         {
-            database.update(dbHelper.TABLE_TABLE, contentValues, "id_tabeli=?", new String[]{dbHelper.COLUMN_TABLE_ID});
+            //poprawić update
+//            Log.d("DUPA", "JESTEM TU" + clubName);
+            database.update(dbHelper.TABLE_TABLE, contentValues, "id_klubu=?", new String[]{dbHelper.COLUMN_CLUB_ID_FK});
         }
         return true;
     }
@@ -104,14 +115,14 @@ public class TableDAO {
         while(!cursor.isAfterLast())
         {
             HashMap<String, String> hashMap = new HashMap<>();
-            hashMap.put(Table.RANK, cursor.getString(1));
-            hashMap.put(Table.TEAM, cursor.getString(2));
-            hashMap.put(Table.POINTS, cursor.getString(3));
-            hashMap.put(Table.MATCHES, cursor.getString(4));
-            hashMap.put(Table.WINS, cursor.getString(5));
-            hashMap.put(Table.DRAWS, cursor.getString(6));
-            hashMap.put(Table.LOSES, cursor.getString(7));
-            hashMap.put(Table.GOALS, cursor.getString(8));
+            hashMap.put(RANK, cursor.getString(1));
+            hashMap.put(TEAM, cursor.getString(2));
+            hashMap.put(POINTS, cursor.getString(3));
+            hashMap.put(MATCHES, cursor.getString(4));
+            hashMap.put(WINS, cursor.getString(5));
+            hashMap.put(DRAWS, cursor.getString(6));
+            hashMap.put(LOSES, cursor.getString(7));
+            hashMap.put(GOALS, cursor.getString(8));
             arrayList.add(hashMap);
             cursor.moveToNext();
         }

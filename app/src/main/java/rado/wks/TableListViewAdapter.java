@@ -14,6 +14,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import rado.dao.TableDAO;
+
 public class TableListViewAdapter extends BaseAdapter {
 
     // Declare Variables
@@ -76,14 +78,14 @@ public class TableListViewAdapter extends BaseAdapter {
         rate = (TextView) itemView.findViewById(R.id.rateText);
 
         // Capture position and set results to the TextViews
-        rank.setText(resultp.get(Table.RANK));
-        team.setText(resultp.get(Table.TEAM));
-        matches.setText(resultp.get(Table.MATCHES));
-        points.setText(resultp.get(Table.POINTS));
-        wins.setText(resultp.get(Table.WINS));
-        draws.setText(resultp.get(Table.DRAWS));
-        loses.setText(resultp.get(Table.LOSES));
-        rate.setText(resultp.get(Table.GOALS));
+        rank.setText(resultp.get(TableDAO.RANK));
+        team.setText(resultp.get(TableDAO.TEAM));
+        matches.setText(resultp.get(TableDAO.MATCHES));
+        points.setText(resultp.get(TableDAO.POINTS));
+        wins.setText(resultp.get(TableDAO.WINS));
+        draws.setText(resultp.get(TableDAO.DRAWS));
+        loses.setText(resultp.get(TableDAO.LOSES));
+        rate.setText(resultp.get(TableDAO.GOALS));
         // Capture position and set results to the ImageView
         // Passes flag images URL into ImageLoader.class
         // Capture ListView item click

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SinglePlayerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="rado.wks.SinglePlayerActivity">
+
+    <ImageView
+        android:id="@+id/PlayerImgView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@drawable/ic_menu_gallery" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/PlayerImgView"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/textView37"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="201dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="4dp"
+            android:text="IMIĘ"
+            app:layout_constraintEnd_toStartOf="@+id/SinglePlayerName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="NAZWISKO"
+            app:layout_constraintStart_toStartOf="@+id/textView37"
+            app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="NUMER"
+            app:layout_constraintStart_toStartOf="@+id/textView40"
+            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+        <TextView
+            android:id="@+id/textView40"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginTop="12dp"
+            android:text="DATA URODZENIA"
+            app:layout_constraintTop_toBottomOf="@+id/textView39"
+            tools:layout_editor_absoluteX="35dp" />
+
+        <TextView
+            android:id="@+id/SinglePlayerName"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginTop="4dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView37"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/SinglePlayerSurname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/SinglePlayerName"
+            app:layout_constraintTop_toBottomOf="@+id/SinglePlayerName" />
+
+        <TextView
+            android:id="@+id/SinglePlayerNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/SinglePlayerSurname"
+            app:layout_constraintTop_toBottomOf="@+id/SinglePlayerSurname" />
+
+        <TextView
+            android:id="@+id/SinglePlayerDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/SinglePlayerNumber"
+            app:layout_constraintTop_toBottomOf="@+id/SinglePlayerNumber" />
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="WZROST"
+            app:layout_constraintTop_toBottomOf="@+id/textView40"
+            tools:layout_editor_absoluteX="35dp" />
+
+        <TextView
+            android:id="@+id/textView46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="WAGA"
+            app:layout_constraintStart_toStartOf="@+id/textView45"
+            app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:text="POZYCJA"
+            app:layout_constraintBottom_toTopOf="@+id/textView48"
+            app:layout_constraintStart_toStartOf="@+id/textView46" />
+
+        <TextView
+            android:id="@+id/textView48"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:text="WARTOSC RYNKOWA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView47"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="WAŻNOSC KONTRAKTU"
+            app:layout_constraintStart_toStartOf="@+id/textView48"
+            app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+        <TextView
+            android:id="@+id/textView50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="NARODOWOSC"
+            app:layout_constraintStart_toStartOf="@+id/textView49"
+            app:layout_constraintTop_toBottomOf="@+id/textView49" />
+
+        <TextView
+            android:id="@+id/textView51"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginTop="12dp"
+            android:text="BYLY KLUB"
+            app:layout_constraintStart_toStartOf="@+id/textView50"
+            app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+        <TextView
+            android:id="@+id/SinglePlayerHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/SinglePlayerDate"
+            app:layout_constraintTop_toBottomOf="@+id/SinglePlayerDate" />
+
+        <TextView
+            android:id="@+id/SinglePlayerWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/SinglePlayerHeight"
+            app:layout_constraintTop_toBottomOf="@+id/SinglePlayerHeight" />
+
+        <TextView
+            android:id="@+id/SinglePlayerPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/SinglePlayerWeight"
+            app:layout_constraintTop_toBottomOf="@+id/SinglePlayerWeight" />
+
+        <TextView
+            android:id="@+id/SinglePlayerValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/SinglePlayerPosition"
+            app:layout_constraintTop_toBottomOf="@+id/SinglePlayerPosition" />
+
+        <TextView
+            android:id="@+id/SinglePlayerContract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/SinglePlayerValue"
+            app:layout_constraintTop_toBottomOf="@+id/SinglePlayerValue" />
+
+        <TextView
+            android:id="@+id/SinglePlayerNationality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/SinglePlayerContract"
+            app:layout_constraintTop_toBottomOf="@+id/SinglePlayerContract" />
+
+        <TextView
+            android:id="@+id/SinglePlayerPrevClub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/SinglePlayerNationality"
+            app:layout_constraintTop_toBottomOf="@+id/SinglePlayerNationality" />
+    </android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>

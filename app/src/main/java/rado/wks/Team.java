@@ -1,6 +1,7 @@
 package rado.wks;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,6 +20,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 import rado.model.Player;
@@ -82,7 +84,7 @@ public class Team extends AppCompatActivity
 
     private Player generatePlayer(ArrayList<String> playerTrait) {
         return new Player(playerTrait.get(0), playerTrait.get(1),playerTrait.get(2), playerTrait.get(3), playerTrait.get(4),
-                playerTrait.get(5), playerTrait.get(6), playerTrait.get(7),playerTrait.get(8), playerTrait.get(9), playerTrait.get(10));
+                playerTrait.get(5), playerTrait.get(6), playerTrait.get(7),playerTrait.get(8), playerTrait.get(9), playerTrait.get(10), playerTrait.get(11));
     }
 
     private String[] getListOfFilesNameFromAssets()

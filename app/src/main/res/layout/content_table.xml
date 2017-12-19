@@ -9,7 +9,7 @@
     tools:showIn="@layout/app_bar_table">
 
     <LinearLayout
-        android:id="@+id/leagueStats"
+        android:id="@+id/eventStats"
         android:layout_width="match_parent"
         android:layout_height="30dp">
 
@@ -89,7 +89,7 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/leagueStats">
+        android:layout_below="@id/eventStats">
 
     </ListView>
 </RelativeLayout>

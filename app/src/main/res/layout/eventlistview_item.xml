@@ -7,7 +7,9 @@
     <RelativeLayout
         android:id="@+id/eventStats"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <TextView
             android:id="@+id/awayResultTextView"
@@ -42,18 +44,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="15dp"
-            android:layout_toStartOf="@+id/awayTeamTextView"
+            android:layout_centerHorizontal="true"
             android:text="16.07.2017" />
 
         <TextView
             android:id="@+id/awayTeamTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/homeTeamTextView"
-            android:layout_alignBottom="@+id/homeTeamTextView"
-            android:layout_marginEnd="13dp"
-            android:layout_toStartOf="@+id/imageButton"
+            android:layout_below="@+id/timeTextView"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/dateTextView"
             android:text="Slask Wrocław" />
 
         <TextView
@@ -61,17 +61,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_below="@+id/homeResultTextView"
-            android:layout_marginEnd="18dp"
-            android:layout_toStartOf="@+id/dateTextView"
+            android:layout_alignBaseline="@+id/awayTeamTextView"
+            android:layout_alignBottom="@+id/awayTeamTextView"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="39dp"
             android:text="Arka Gdynia" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@android:drawable/star_big_off" />
     </RelativeLayout>
 </RelativeLayout>

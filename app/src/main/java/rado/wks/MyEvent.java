@@ -13,9 +13,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
+import android.widget.ListView;
+
+import rado.dao.EventDAO;
+import rado.dao.TimetableDAO;
 
 public class MyEvent extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ListView listView;
+    EventListViewAdapter adapter;
+    EventDAO eventDAO;
+    ImageButton imageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +43,12 @@ public class MyEvent extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().getItem(7).setChecked(true);
+
+        eventDAO = new EventDAO(this);
+
+        listView = (ListView) findViewById(R.id.eventsList);
+        adapter = new EventListViewAdapter(MyEvent.this,eventDAO.getAllEventsList() );
+        listView.setAdapter(adapter);
     }
 
     @Override

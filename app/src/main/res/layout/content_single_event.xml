@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="rado.wks.SingleEvent"
+    tools:showIn="@layout/app_bar_single_event">
+
+    <RelativeLayout
+        android:id="@+id/SingleEventMatchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/SingleEventGuest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/SingleEventHost"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="46dp"
+            android:text="Arka Gdynia" />
+
+        <TextView
+            android:id="@+id/SingleEventHost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/SingleEventTime"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="33dp"
+            android:text="Slask Wroclaw" />
+
+        <TextView
+            android:id="@+id/SingleEventTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SingeEventDate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="18:00" />
+
+        <TextView
+            android:id="@+id/SingeEventDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:text="15.06.2017" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/SingleEventNoteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SingleEventMatchLayout"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="DODAJ NOTATKĘ"
+            android:textAlignment="center"
+            android:textSize="35dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/SingleEventPhotoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SingleEventNoteLayout"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="DODAJ ZDJĘCIE"
+            android:textAlignment="center"
+            android:textSize="35dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/SingleEventWeatherLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SingleEventPhotoLayout"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SPRAWDŹ POGODĘ"
+            android:textSize="35dp"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/SingleEventNavigationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SingleEventWeatherLayout"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PROWADŹ NA STADION"
+            android:textSize="30dp"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/SingleEventGalleryAndNotes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/SingleEventNavigationLayout"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="66dp"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/imageButton2"
+            android:layout_marginEnd="65dp"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imageButton2"
+            android:layout_below="@+id/imageButton2"
+            android:text="Galeria" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView32"
+            android:layout_alignEnd="@+id/imageButton3"
+            android:text="Notatki" />
+    </RelativeLayout>
+
+</RelativeLayout>

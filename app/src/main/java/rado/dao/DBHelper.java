@@ -34,6 +34,15 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_RESULT_HOME = "bramki_dom";
     public static final String COLUMN_RESULT_AWAY = "bramki_wyjazd";
 
+    public static final String TABLE_EVENT = "wydarzenie";
+    public static final String COLUMN_EVENT_ID = "id_wydarzenia";
+    public static final String COLUMN_EVENT_HOST = "gospodarz";
+    public static final String COLUMN_EVENT_GUEST = "gosc";
+    public static final String COLUMN_EVENT_DATE = "data";
+    public static final String COLUMN_EVENT_TIME = "czas";
+    public static final String COLUMN_EVENT_RESULT_HOME = "bramki_dom";
+    public static final String COLUMN_EVENT_RESULT_AWAY = "bramki_wyjazd";
+
     private static final String DATABASE_NAME = "wks.db";
     private static final int DATABASE_VERSION = 1;
 
@@ -60,6 +69,16 @@ public class DBHelper extends SQLiteOpenHelper {
             + COLUMN_RESULT_AWAY + " TEXT "
             + ");";
 
+    private static final String SQL_CREATE_EVENT_TABLE = "CREATE TABLE "+ TABLE_EVENT + "("
+            + COLUMN_EVENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + COLUMN_EVENT_HOST + " TEXT NOT NULL, "
+            + COLUMN_EVENT_GUEST + " TEXT NOT NULL, "
+            + COLUMN_EVENT_DATE + " TEXT NOT NULL, "
+            + COLUMN_EVENT_TIME + " TEXT NOT NULL, "
+            + COLUMN_EVENT_RESULT_HOME + " TEXT, "
+            + COLUMN_EVENT_RESULT_AWAY + " TEXT "
+            + ");";
+
     public DBHelper(Context context)
     {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -68,12 +87,14 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_TABLE_TABLE);
         db.execSQL(SQL_CREATE_TIMETABLE_TABLE);
+        db.execSQL(SQL_CREATE_EVENT_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_TABLE);
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_TIMETABLE);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_EVENT);
         onCreate(db);
     }
 

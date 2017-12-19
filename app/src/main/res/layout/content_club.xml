@@ -8,16 +8,37 @@
     tools:context="rado.wks.Club"
     tools:showIn="@layout/app_bar_club">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="150dp"
-        android:gravity="center"
-        android:text="Klub"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="246dp" />
+        android:contentDescription="Stadion"
+        app:srcCompat="@drawable/slask_stadion" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="SLASK WROCLAW"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="12dp"
+        android:text="Polski klub piłkarski z siedzibą we Wrocławiu, występujący w Ekstraklasie. Dwukrotny mistrz Polski (1977, 2012), trzykrotny wicemistrz Polski (1978, 1982, 2011), dwukrotny zdobywca Pucharu Polski (1976, 1987), dwukrotny zdobywca Superpucharu Polski (1987, 2012) oraz zdobywca Pucharu Ekstraklasy (2009). W tabeli wszech czasów Ekstraklasy zajmuje 9. miejsce." />
+
 </RelativeLayout>

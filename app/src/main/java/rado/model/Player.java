@@ -16,8 +16,9 @@ public class Player {
     String endOfContractDate;
     String nationality;
     String previousClub;
+    String img;
 
-    public Player(String name, String surname, String num, String date, String height, String weight, String position, String marketValue, String endOfContractDate, String nationality, String previousClub) {
+    public Player(String name, String surname, String num, String date, String height, String weight, String position, String marketValue, String endOfContractDate, String nationality, String previousClub, String img) {
         this.name = name;
         this.surname = surname;
         this.number = num;
@@ -29,6 +30,7 @@ public class Player {
         this.endOfContractDate = endOfContractDate;
         this.nationality = nationality;
         this.previousClub = previousClub;
+        this.img = img;
     }
 
     public String getName() {
@@ -118,4 +120,8 @@ public class Player {
     public void setNumber(String number) {
         this.number = number;
     }
+
+    public void setImg(String img) { this.img = img;}
+
+    public String getImg() {return img;}
 }

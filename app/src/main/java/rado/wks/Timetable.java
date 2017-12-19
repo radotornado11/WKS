@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import rado.dao.EventDAO;
 import rado.dao.TimetableDAO;
 
 public class Timetable extends AppCompatActivity
@@ -37,12 +38,6 @@ public class Timetable extends AppCompatActivity
     TimetableListViewAdapter adapter;
     TimetableDAO timetableDAO;
     ImageButton imageButton;
-    public static String DATE = "Data";
-    public static String TIME = "Czas";
-    public static String TEAM_HOME = "Drużyna dom";
-    public static String TEAM_AWAY = "Drużyna wyjazd";
-    public static String HOME_RESULT = "Bramki dom";
-    public static String AWAY_RESULT = "Bramki wyjazd";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
