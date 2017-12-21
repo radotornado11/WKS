@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="rado.wks.WheaterActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/weatherDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="26dp"
+        android:text="Date" />
+
+    <TextView
+        android:id="@+id/weatherCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/weatherDate"
+        android:layout_alignBottom="@+id/weatherDate"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="82dp"
+        android:text="City" />
+
+    <TextView
+        android:id="@+id/weatherTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/weatherDate"
+        android:layout_below="@+id/weatherDate"
+        android:layout_marginTop="88dp"
+        android:text="30" />
+
+    <TextView
+        android:id="@+id/weatherDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/weatherTemp"
+        android:layout_below="@+id/weatherTemp"
+        android:layout_marginTop="48dp"
+        android:text="Sunny" />
+</RelativeLayout>

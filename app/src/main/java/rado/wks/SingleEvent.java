@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,7 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import rado.model.ClubNameParser;
 
 public class SingleEvent extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -22,6 +26,10 @@ public class SingleEvent extends AppCompatActivity
     TextView timeTextView;
     TextView homeTextView;
     TextView awayTextView;
+
+    LinearLayout weatherLayout;
+    TextView weatherText;
+    ClubNameParser clubNameParser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +47,34 @@ public class SingleEvent extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        clubNameParser = new ClubNameParser();
+
         dataTextView = (TextView) findViewById(R.id.SingeEventDate);
         timeTextView = (TextView) findViewById(R.id.SingleEventTime);
         homeTextView = (TextView) findViewById(R.id.SingleEventHost);
         awayTextView = (TextView) findViewById(R.id.SingleEventGuest);
 
         Intent i = this.getIntent();
-        Bundle bundle = i.getExtras();
+        final Bundle bundle = i.getExtras();
 
         dataTextView.setText(bundle.getString("DATE_KEY"));
         timeTextView.setText(bundle.getString("TIME_KEY"));
         homeTextView.setText(bundle.getString("HOME_KEY"));
         awayTextView.setText(bundle.getString("AWAY_KEY"));
+
+        final String hostCityName = clubNameParser.parseClubNameToCity(bundle.getString("HOME_KEY"));
+        Log.d("DUPA", hostCityName);
+
+        weatherLayout = (LinearLayout) findViewById(R.id.SingleEventWeatherLayout);
+
+        weatherLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SingleEvent.this, WheaterActivity.class);
+                intent.putExtra("CITY", hostCityName);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
