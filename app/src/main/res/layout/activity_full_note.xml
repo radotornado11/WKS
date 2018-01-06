@@ -4,17 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="rado.wks.Gallery"
-    tools:showIn="@layout/app_bar_gallery">
+    tools:context="rado.wks.FullNoteActivity">
 
-    <GridView
-        android:id="@+id/galleryGridView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:columnWidth="100dp"
-        android:horizontalSpacing="5dp"
-        android:numColumns="auto_fit"/>
+        android:text="TextView" />
 </RelativeLayout>

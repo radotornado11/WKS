@@ -5,16 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="rado.wks.Gallery"
-    tools:showIn="@layout/app_bar_gallery">
+    tools:context="rado.wks.NotesActivity"
+    tools:showIn="@layout/app_bar_notes">
 
-    <GridView
-        android:id="@+id/galleryGridView"
+    <ListView
+        android:id="@+id/notesList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:columnWidth="100dp"
-        android:horizontalSpacing="5dp"
-        android:numColumns="auto_fit"/>
+        android:layout_height="match_parent" />
 </RelativeLayout>

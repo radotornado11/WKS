@@ -1,8 +1,10 @@
 package rado.wks;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,59 +13,83 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.AdapterView;
-import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.BitSet;
 
-import rado.model.PhotoLoader;
+import rado.model.FileLoader;
 
-public class Gallery extends AppCompatActivity
+public class NotesActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ArrayList<Bitmap> bitmapsImage;
-    PhotoLoader photoLoader;
+    ListView notesList;
+    ArrayList<File> filesOfNotesList;
+    FileLoader fileLoader;
     Intent i;
     Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gallery);
+        setContentView(R.layout.activity_notes);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.getMenu().getItem(6).setChecked(true);
 
-        bitmapsImage = new ArrayList<>();
-        photoLoader = new PhotoLoader();
-
+        fileLoader = new FileLoader();
         i = getIntent();
         bundle = i.getExtras();
-        bitmapsImage = photoLoader.getImagesFromMatch(bundle.getString("KEY_MATCHNAME"));
 
-        GridView gridView = (GridView) findViewById(R.id.galleryGridView);
-        gridView.setAdapter(new GalleryAdapter(this, bitmapsImage));
+        filesOfNotesList = fileLoader.getNotesFromMatch(bundle.getString("KEY_MATCHNAME"));
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        notesList = (ListView) findViewById(R.id.notesList);
+        notesList.setAdapter(new NotesAdapter(this, filesOfNotesList));
+
+        notesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), FullImageGalleryActivity.class);
-                intent.putExtra("id", position);
-                intent.putExtra("match", bundle.getString("KEY_MATCHNAME"));
+                Intent intent = new Intent(getApplicationContext(), FullNoteActivity.class);
+                intent.putExtra("TEXT", readFile(filesOfNotesList.get(position).getPath()));
                 startActivity(intent);
             }
         });
+    }
+
+    public String readFile(String pathName){
+        FileInputStream fis = null;
+        StringBuilder sb = null;
+
+        try {
+            fis = new FileInputStream(new File(pathName));
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            sb = new StringBuilder();
+            String text;
+
+            while ((text = br.readLine())!= null){
+                sb.append(text);
+            }
+
+            return sb.toString();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
@@ -79,7 +105,7 @@ public class Gallery extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.notes, menu);
         return true;
     }
 
@@ -104,41 +130,18 @@ public class Gallery extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        switch (id) {
-            case R.id.nav_main:
-                Intent main= new Intent(this,MainActivity.class);
-                startActivity(main);
-                break;
-            case R.id.nav_news:
-                Intent h = new Intent(this, News.class);
-                startActivity(h);
-                break;
-            case R.id.nav_table:
-                Intent i = new Intent(this, Table.class);
-                startActivity(i);
-                break;
-            case R.id.nav_timetable:
-                Intent g = new Intent(this, Timetable.class);
-                startActivity(g);
-                break;
-            case R.id.nav_team:
-                Intent s = new Intent(this, Team.class);
-                startActivity(s);
-                break;
-            case R.id.nav_club:
-                Intent t = new Intent(this, Club.class);
-                startActivity(t);
-                break;
-            case R.id.nav_shop:
-                Intent sh = new Intent(this, MyEvent.class);
-                startActivity(sh);
-                break;
-            case R.id.nav_gallery:
-                break;
-            case R.id.nav_chants:
-                Intent chants = new Intent(this, Chants.class);
-                startActivity(chants);
-                break;
+        if (id == R.id.nav_camera) {
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
+
+        } else if (id == R.id.nav_slideshow) {
+
+        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.nav_share) {
+
+        } else if (id == R.id.nav_send) {
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
