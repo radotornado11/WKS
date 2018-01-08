@@ -81,7 +81,8 @@
             android:name=".AddNoteActivity"
             android:label="@string/title_activity_add_note"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FullNoteActivity"></activity>
+        <activity android:name=".FullNoteActivity" />
+        <activity android:name=".FullNewsActivity"></activity>
     </application>
 
 </manifest>

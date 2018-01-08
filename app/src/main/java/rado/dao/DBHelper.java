@@ -43,6 +43,12 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_EVENT_RESULT_HOME = "bramki_dom";
     public static final String COLUMN_EVENT_RESULT_AWAY = "bramki_wyjazd";
 
+    public static final String TABLE_NEWS = "news";
+    public static final String COLUMN_NEWS_ID = "id_newsa";
+    public static final String COLUMN_NEWS_NR = "nr_newsa";
+    public static final String COLUMN_NEWS_HEAD = "naglowek";
+    public static final String COLUMN_NEWS_BODY = "cialo";
+
     private static final String DATABASE_NAME = "wks.db";
     private static final int DATABASE_VERSION = 1;
 
@@ -79,6 +85,13 @@ public class DBHelper extends SQLiteOpenHelper {
             + COLUMN_EVENT_RESULT_AWAY + " TEXT "
             + ");";
 
+    private static final String SQL_CREATE_NEWS_TABLE = "CREATE TABLE "+ TABLE_NEWS + "("
+            + COLUMN_NEWS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + COLUMN_NEWS_NR + " TEXT NOT NULL, "
+            + COLUMN_NEWS_HEAD + " TEXT NOT NULL, "
+            + COLUMN_NEWS_BODY + " TEXT NOT NULL "
+            + ");";
+
     public DBHelper(Context context)
     {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -88,6 +101,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_TABLE_TABLE);
         db.execSQL(SQL_CREATE_TIMETABLE_TABLE);
         db.execSQL(SQL_CREATE_EVENT_TABLE);
+        db.execSQL(SQL_CREATE_NEWS_TABLE);
     }
 
     @Override
@@ -95,6 +109,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_TABLE);
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_TIMETABLE);
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_EVENT);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NEWS);
         onCreate(db);
     }
 

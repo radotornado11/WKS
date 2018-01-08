@@ -10,9 +10,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import rado.dao.NewsDAO;
 
 public class News extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    NewsDAO newsDAO;
+    ListView newsList;
+    ArrayList<HashMap<String, String>> listOfNews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +42,22 @@ public class News extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().getItem(1).setChecked(true);
+
+        newsDAO = new NewsDAO(this);
+
+        listOfNews = newsDAO.getAllTableList();
+
+        newsList = (ListView) findViewById(R.id.newsList);
+        newsList.setAdapter(new NewsAdapter(this, listOfNews));
+
+        newsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), FullNewsActivity.class);
+                intent.putExtra("BODY", listOfNews.get(position).get(newsDAO.BODY_NEWSA));
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
